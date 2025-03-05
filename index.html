@@ -1,29 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Guess the Number</title>
-</head>
-<body>
-    <p>Open your Developer Tools and Reload the page to play the game!</p>
-</body>
-<script>
-  let number = Math.floor(Math.random() * 100);
-  let guess = 0;
-  let score = 100;
-  do {
-    guess = prompt("Enter a number between 0 - 100 : ");
-    guess = Number.parseInt(guess);
-    if (guess > number) {
-      console.log(guess + " is greater than original number. Try again!");
-      score--;
-    } else if (guess < number) {
-      console.log(guess + " is smaller than original number. Try again!");
-      score--;
-    } else {
-      console.log("Congratulations, your answer is correct. Your score is : " + score);
+  </head>
+  <style>
+    body {
+      text-align: center;
     }
-  } while (number !== guess);
-</script>
+  </style>
+  <body>
+    <p>Open your Developer Tools and Click on Button Below to play the game!</p>
+    <button onclick="startGame()">Play Game!</button>
+  </body>
+  <script>
+    function startGame() {
+    let number = Math.floor(Math.random() * 100);
+    let guess = 0;
+    let score = 100;
+      do {
+        guess = prompt("Enter a number between 0 - 100 : ");
+        guess = Number.parseInt(guess);
+        if (guess > number) {
+          console.log(guess + " is greater than original number. Try again!");
+          score--;
+        } else if (guess < number) {
+          console.log(guess + " is smaller than original number. Try again!");
+          score--;
+        } else {
+          console.log(
+            "Congratulations, your answer is correct. Your score is : " + score
+          );
+        }
+      } while (number !== guess);
+    }
+  </script>
 </html>
